@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuroNemotron — Hierarchical Agentic Research Intelligence</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Marked.js for markdown rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="navbar">
+      <div class="logo-group">
+        <div class="nvidia-badge">
+          <span class="nvidia-logo"></span>
+          <span class="badge-text">NVIDIA Nemotron</span>
+        </div>
+        <span class="plus-sign">+</span>
+        <div class="nebius-badge">
+          <span class="nebius-icon">⚡</span>
+          <span>Nebius Token Factory</span>
+        </div>
+        <span class="plus-sign">+</span>
+        <div class="tavily-badge">
+          <span class="tavily-icon">🔍</span>
+          <span>Tavily Search</span>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <div class="system-status online">
+          <span class="pulse-dot"></span>
+          <span>Clusters Active</span>
+        </div>
+        <a href="https://github.com/akshatanand-cell/neuro-nemotron" target="_blank" class="github-btn" rel="noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-section">
+      <div class="hero-tag">Best Apps & Agents Track • Official Nebius x NVIDIA Hackathon 2026</div>
+      <h1 class="hero-title">Autonomous <span class="gradient-text">Hierarchical Research</span> Intelligence</h1>
+      <p class="hero-subtitle">
+        Eliminate LLM hallucination and latency bottlenecks. Powered by <strong>NVIDIA Nemotron Nano</strong> for strategic query routing, <strong>Tavily</strong> for verified web evidence, and <strong>Nemotron 3 Ultra</strong> on <strong>Nebius Token Factory</strong> for high-reasoning causal synthesis.
+      </p>
+    </section>
+
+    <!-- Query Input Area -->
+    <section class="research-input-card">
+      <div class="input-header">
+        <label for="queryInput" class="input-label">RESEARCH OBJECTIVE / COMPLEX QUERY</label>
+        <div class="depth-selector">
+          <button type="button" class="depth-btn active" data-depth="balanced">Balanced Mode</button>
+          <button type="button" class="depth-btn" data-depth="deep">Deep Multi-Hop</button>
+        </div>
+      </div>
+
+      <div class="input-wrapper">
+        <textarea id="queryInput" placeholder="Enter any complex technical, scientific, or market research inquiry..." rows="3">Autonomous Agent Architectures: Evaluating Model Context Protocol (MCP) vs LangGraph vs CrewAI for Enterprise Production</textarea>
+        <button id="runResearchBtn" class="primary-launch-btn">
+          <span class="btn-icon">⚡</span>
+          <span class="btn-text">Execute Autonomous Research</span>
+        </button>
+      </div>
+
+      <!-- Quick Prompt Suggestions -->
+      <div class="quick-prompts">
+        <span class="quick-label">Suggested Inquiries:</span>
+        <button class="prompt-chip" data-query="Quantum Computing in Drug Discovery: 2026-2027 Breakthroughs and Scalability">Quantum in Drug Discovery</button>
+        <button class="prompt-chip" data-query="NVIDIA Nemotron-3-Ultra vs Llama 3.3: Inference Economics on Nebius Cloud">Nemotron vs Llama on Nebius</button>
+        <button class="prompt-chip" data-query="Solid-State Battery Breakthroughs: Commercial Feasibility in Aviation 2026">Solid-State Battery Aviation</button>
+      </div>
+
+      <!-- Optional API Keys Accordion -->
+      <details class="api-keys-accordion">
+        <summary class="accordion-summary">
+          <span>⚙️ Optional API Keys (Nebius Token Factory & Tavily) — <em>Auto-falls back to built-in simulation if empty</em></span>
+        </summary>
+        <div class="keys-grid">
+          <div class="key-field">
+            <label>Nebius Token Factory API Key:</label>
+            <input type="password" id="nebiusKeyInput" placeholder="nb-sec-xxxxxxxxxxxxxxxx (Leave blank for demo)">
+          </div>
+          <div class="key-field">
+            <label>Tavily Search API Key:</label>
+            <input type="password" id="tavilyKeyInput" placeholder="tvly-xxxxxxxxxxxxxxxx (Leave blank for demo)">
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- Execution Telemetry & Pipeline Status -->
+    <section id="pipelineSection" class="pipeline-section">
+      <div class="pipeline-stages">
+        <div class="stage-step" id="stage-decompose">
+          <div class="step-indicator">1</div>
+          <div class="step-meta">
+            <span class="step-title">Query Decomposition</span>
+            <span class="step-model">Nemotron Nano (Fast Tier)</span>
+          </div>
+          <span class="step-badge pending">Pending</span>
+        </div>
+
+        <div class="stage-step" id="stage-search">
+          <div class="step-indicator">2</div>
+          <div class="step-meta">
+            <span class="step-title">Web Verification</span>
+            <span class="step-model">Tavily Search API</span>
+          </div>
+          <span class="step-badge pending">Pending</span>
+        </div>
+
+        <div class="stage-step" id="stage-synthesize">
+          <div class="step-indicator">3</div>
+          <div class="step-meta">
+            <span class="step-title">Causal Synthesis</span>
+            <span class="step-model">Nemotron 3 Ultra (Nebius)</span>
+          </div>
+          <span class="step-badge pending">Pending</span>
+        </div>
+
+        <div class="stage-step" id="stage-graph">
+          <div class="step-indicator">4</div>
+          <div class="step-meta">
+            <span class="step-title">Evidence Graph</span>
+            <span class="step-model">Knowledge Synthesis</span>
+          </div>
+          <span class="step-badge pending">Pending</span>
+        </div>
+      </div>
+
+      <!-- Live Telemetry Stats -->
+      <div class="telemetry-bar" id="telemetryBar">
+        <div class="telemetry-card">
+          <span class="telemetry-label">Time to Verdict</span>
+          <span class="telemetry-val" id="metricLatency">--</span>
+        </div>
+        <div class="telemetry-card">
+          <span class="telemetry-label">Tokens Processed</span>
+          <span class="telemetry-val" id="metricTokens">--</span>
+        </div>
+        <div class="telemetry-card">
+          <span class="telemetry-label">Inference Savings</span>
+          <span class="telemetry-val highlight-green" id="metricSavings">--</span>
+        </div>
+        <div class="telemetry-card">
+          <span class="telemetry-label">Tavily Web Calls</span>
+          <span class="telemetry-val" id="metricTavily">--</span>
+        </div>
+        <div class="telemetry-card">
+          <span class="telemetry-label">Compute Cluster</span>
+          <span class="telemetry-val" id="metricCluster">Nebius Hopper H100</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Workspace (Knowledge Graph + Results) -->
+    <main class="results-workspace" id="resultsWorkspace">
+      <!-- Knowledge Graph Visualization -->
+      <div class="graph-card">
+        <div class="card-header">
+          <div class="header-title">
+            <span class="icon">🕸️</span>
+            <span>Dynamic Knowledge Graph & Cross-Source Citation Mesh</span>
+          </div>
+          <span class="graph-legend">
+            <span class="dot green"></span> Nano
+            <span class="dot violet"></span> Ultra
+            <span class="dot blue"></span> Tavily
+            <span class="dot amber"></span> Evidence
+          </span>
+        </div>
+        <div class="canvas-container">
+          <canvas id="knowledgeGraphCanvas" width="900" height="340"></canvas>
+        </div>
+      </div>
+
+      <!-- Tabbed Results Area -->
+      <div class="brief-card">
+        <div class="tab-header">
+          <div class="tabs-list">
+            <button class="tab-btn active" data-tab="tabReport">📄 Executive Research Brief</button>
+            <button class="tab-btn" data-tab="tabEvidence">🔍 Tavily Evidence Ledger (<span id="sourceCountBadge">0</span>)</button>
+            <button class="tab-btn" data-tab="tabLogs">⚡ Agent Thought Stream</button>
+          </div>
+          <div class="tab-actions">
+            <button id="copyReportBtn" class="action-btn" title="Copy Markdown to Clipboard">📋 Copy</button>
+            <button id="printReportBtn" class="action-btn" title="Print / Save PDF">🖨️ Export PDF</button>
+          </div>
+        </div>
+
+        <div class="tab-content">
+          <!-- Tab 1: Executive Report -->
+          <div id="tabReport" class="tab-pane active">
+            <div id="reportMarkdownContainer" class="markdown-body">
+              <p class="placeholder-text">Click "Execute Autonomous Research" above to initiate hierarchical inference.</p>
+            </div>
+          </div>
+
+          <!-- Tab 2: Discovered Citations & Tavily Evidence -->
+          <div id="tabEvidence" class="tab-pane">
+            <div class="evidence-grid" id="evidenceGrid">
+              <p class="placeholder-text">Verified web citations from Tavily Search will appear here.</p>
+            </div>
+          </div>
+
+          <!-- Tab 3: Thought Stream Logs -->
+          <div id="tabLogs" class="tab-pane">
+            <div class="thought-stream-console" id="thoughtStreamLogs">
+              <div class="log-entry system">[SYSTEM] Ready to receive research directives. Multi-tier routing primed.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div>
+        Built with ❤️ for the <strong>Nebius x NVIDIA Global AI Hackathon 2026</strong> by <strong>Akshat Anand</strong>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/akshatanand-cell/neuro-nemotron" target="_blank">Open Source (MIT)</a> •
+        <a href="https://nebius.com/services/token-factory" target="_blank">Nebius Token Factory</a> •
+        <a href="https://tavily.com" target="_blank">Tavily AI</a> •
+        <a href="https://developer.nvidia.com/nemotron" target="_blank">NVIDIA Nemotron</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
